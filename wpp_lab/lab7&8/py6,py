@@ -1,0 +1,22 @@
+class bnkacct:
+    def __init__(self, acc_num, balance=0):
+        self.acc_num = acc_num  # Account number
+        self.balance = balance  # Account balance
+
+    def deposit(self, amt):
+        self.balance += amt  # Add amount to balance
+
+    def withdraw(self, amt):
+        if amt <= self.balance:
+            self.balance -= amt  # Subtract amount from balance
+        else:
+            print("Insufficient funds")
+
+    def display(self):
+        print(f"Account No: {self.acc_num}\nBalance: ${self.balance}")
+
+# Example usage
+acc = bnkacct("12345", 1000)
+acc.deposit(500)
+acc.withdraw(200)
+acc.display()
